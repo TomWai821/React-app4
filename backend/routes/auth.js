@@ -14,18 +14,19 @@ router.post('/createuser', [
     body('email','Enter a valid email').isEmail(),
     body('password','Password must be at least 5 characters').isLength({min: 5})
 ], async(req, res)=> {
+    let success = false;
 
     // If there are errors, return Bad request and the errors
     const errors = validationResult(req);
     if(!errors.isEmpty()){
-        return res.status(400).json({ errors: errors.array() })
+        return res.status(400).json({ success, errors: errors.array() })
     }
    
     try{
     // Check weather the user with this email exists already
     let user = await User.findOne({email: req.body.email})
     if(user){
-        return res.status(400).json({error: "Sorry, a user with this email already exist"})
+        return res.status(400).json({success, error: "Sorry, a user with this email already exist"})
     }
     const salt = await bcrypt.genSalt(10);
     const secPass = await bcrypt.hash(req.body.password, salt)
@@ -47,12 +48,14 @@ router.post('/createuser', [
         }
         const authtoken = jwt.sign(data, JWT_SECRET);
 
-        res.json({authtoken});
+        success = true;
+        res.json({success, authtoken});
 
         // catch errors
         }catch(error){
             console.error(error.message)
             res.status(500).send("Some Error occured")
+            success = false;
         }
     })
 
@@ -62,10 +65,11 @@ router.post('/createuser', [
         body('password',"password cannot be blank").exists(),
     ], async(req, res)=> {
         let success = false;
+
         // If there are errors, return Bad request and the errors
         const errors = validationResult(req);
         if(!errors.isEmpty()){
-            return res.status(400).json({ errors: errors.array() })
+            return res.status(400).json({success, errors: errors.array() })
         } 
         const{email, password} = req.body;
         try{
@@ -88,7 +92,7 @@ router.post('/createuser', [
             }
             const authtoken = jwt.sign(data, JWT_SECRET);
             success = true;
-            res.json({ success, authtoken});
+            res.json({ success, authtoken });
 
         }catch(error){
             console.error(error.message)

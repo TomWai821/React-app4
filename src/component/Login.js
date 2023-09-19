@@ -13,10 +13,14 @@ const Login = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({email: credentials.email, password: credentials.password})
+            body: JSON.stringify({
+                email: credentials.email, 
+                password: credentials.password
+            })
         });
         const json = await response.json()
         console.log(json);
+
         if(json.success){
             //Save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
@@ -37,7 +41,6 @@ const Login = () => {
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
                     <input type="email" className="form-control" value={credentials.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp"/>
-                        <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Password</label>

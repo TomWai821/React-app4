@@ -27,7 +27,7 @@ const About = () => {
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                        <p>I use  function components in this website</p>
+                        <p>I use 7 function components in this website</p>
                         <p><strong>useState</strong> to set some state to input field(alert message, user email and password etc.)</p>
                         <p><strong>useLocation</strong> to get component file is in location or not</p>
                         <p><strong>useNavigate</strong> to change website route</p>

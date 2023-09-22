@@ -27,14 +27,15 @@ const About = () => {
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                        <p>I use 7 function components in this website</p>
+                        <p>I use 8 function components in this website</p>
                         <p><strong>useState</strong> to set some state to input field(alert message, user email and password etc.)</p>
-                        <p><strong>useLocation</strong> to get component file is in location or not</p>
-                        <p><strong>useNavigate</strong> to change website route</p>
-                        <p><strong>useContext</strong> to create context (notes)</p>
-                        <p><strong>useEffect</strong> to render data the website</p>
-                        <p><strong>Router, Routes and Route</strong> to create a router domain and set the website location</p>
-                        <p><strong>Link</strong> to change website to another page from current page</p>
+                        <p><strong>useLocation</strong> to get component/file location</p>
+                        <p><strong>useNavigate</strong> to change website to another page from current page</p>
+                        <p><strong>createContext</strong> to create context (notes)</p>
+                        <p><strong>useContext</strong> to use content (notes) from content class</p>
+                        <p><strong>useEffect</strong> to render data the website UI</p>
+                        <p><strong>Router, Routes and Route</strong> to create a router domain and set the website path (There are 4 path in this website)</p>
+                        <p><strong>Link</strong> can let component link to other component or pages</p>
                         </div>
                     </div>
                 </div>

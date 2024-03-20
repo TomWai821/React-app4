@@ -1,9 +1,11 @@
-This iNotebook website made with MERN stack(MongoDB for database, Express.js for backend, React.js for frontend and Node.js for server environment)
+This iNotebook website made with MERN stack(MongoDB for database, Express.js for backend, React.js for frontend and Node.js for server environment) and boostrap
 
 And there are 3 pages(Registration, Login and the main page)
 
 In this project, i am using Restful API to communicate with MongoDB(NoSQL database) in express.js(backend side) to complete CRUD operations(note and user)
 Use jwt(Json web token) to protect the object id, bcrypt to protect the password(generate salt to hash the password)
+
+Using bootstrap for UI design(card view, navbar, alert and button)
 
 Using Node.js for setup the server(Such as listening port, id, sql connection)
 

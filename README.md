@@ -13,5 +13,3 @@ And using React.js to manage the frontend rendering
 For example: 
 Using useEffect, useState, fetch, react-router-dom to rendering user login/logout. 
 Using useContext(include provider), useState, useRef, fetch to manage the rendering of Notes.
-
-[Project Demo](https://github.com/TomWai821/React-app4)
